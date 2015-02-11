@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  # get 'welcome/index'
+
+  get 'hello/:world' => 'welcome#index'
+
+  get 'list/:id' => 'list#list'
+
+  root 'list#lists'
+
+  get 'search' => 'list#search'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

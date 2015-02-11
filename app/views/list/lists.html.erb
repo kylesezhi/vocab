@@ -1,0 +1,11 @@
+<form action="/search" method="get">
+    <input type="text" id="term" name="term" class="keyword"  tabindex="1" />
+    <button type="submit">search</button>
+</form>
+<ul>
+	<% for list in @lists %>
+		<li>
+			<%= link_to list.name, "/list/#{list.id}" %>
+		</li> 
+	<% end %>
+</ul>
