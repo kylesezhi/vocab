@@ -1,4 +1,5 @@
 # To Do
+- [ ] Get Japanese search to work
 - [ ] Highlight the search results
 - [ ] Add an entry
 - [ ] Make pretty
