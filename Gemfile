@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#Anki
+gem 'anki'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'

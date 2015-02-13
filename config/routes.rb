@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'list/:id' => 'list#list'
 
+  get 'list/:id/export' => 'list#export'
+
   root 'list#lists'
 
   get 'search' => 'list#search'
