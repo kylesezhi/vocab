@@ -5,7 +5,7 @@
 <table>
 	<% for entry in @entries %>
 		<tr>
-			<% if params[:term] %>
+			<% if params[:term] and !(params[:term] == '')%>
 				<td><%= highlight(entry.japanese, params[:term]) %></td>
 				<td><%= highlight(entry.english, params[:term]) %></td>
 			<% else %>
