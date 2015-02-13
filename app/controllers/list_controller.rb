@@ -9,6 +9,8 @@ class ListController < ApplicationController
 
 	def search
 		@entries = Entry.search(params[:term])
+		@highlight_term = params[:term]
+
 		render 'list'
 	end
 end
