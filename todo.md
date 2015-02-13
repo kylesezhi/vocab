@@ -5,3 +5,4 @@
 
 # Kyle
 - [ ] Update CSV file
+- [x] Make todo list
