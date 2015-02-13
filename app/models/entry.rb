@@ -3,7 +3,7 @@ class Entry < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where('english LIKE ?', "%#{search}%")
+      where('english LIKE ? OR japanese LIKE ?', "%#{search}%", "%#{search}%")
     else
       scoped
     end

@@ -1,8 +1,17 @@
+<form action="/search" method="get">
+		<input type="text" id="term" name="term" class="keyword"  tabindex="1" />
+		<button type="submit">search</button>
+</form>
 <table>
 	<% for entry in @entries %>
 		<tr>
-			<td><%= entry.japanese %></td>
-			<td><%= entry.english %></td>
+			<% if params[:term] %>
+				<td><%= highlight(entry.japanese, params[:term]) %></td>
+				<td><%= highlight(entry.english, params[:term]) %></td>
+			<% else %>
+				<td><%= entry.japanese %></td>
+				<td><%= entry.english %></td>
+			<% end %>
 		</tr>
 	<% end %>
 </table>
