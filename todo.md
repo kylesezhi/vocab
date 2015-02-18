@@ -3,7 +3,8 @@
 - [x] Highlight the search results
 - [ ] Add an entry
 - [ ] Make pretty
+- [ ] Enable csv file upload
 
 # Kyle
-- [ ] Update CSV file
+- [x] Update CSV file
 - [x] Make todo list
