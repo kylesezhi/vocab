@@ -4,14 +4,10 @@ class ListController < ApplicationController
 	end
 
 	def new
-		# @list = List.new
 	end
 
 	def create
-		# render plain: params[:list].inspect
-		@list= List.new(list_params)
-
-    @list.save
+		@list= List.create(list_params)
     redirect_to @list
 	end
 

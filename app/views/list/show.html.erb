@@ -1,12 +1,13 @@
 <%= render partial: 'search' %>
 
-<%= link_to 'Add new entry', new_list_entry_path(@id) %>
+<%= link_to 'Add new entry', new_list_entry_path(@id) if defined? @id %>
 
 <table>
 	<% for entry in @entries %>
 		<tr>
-				<td><%= entry.japanese %></td>
-				<td><%= entry.english %></td>
+				<td><%= highlight(entry.japanese, @highlight_term) rescue entry.japanese %></td>
+				<td><%= highlight(entry.english, @highlight_term) rescue entry.english %></td>
 		</tr>
 	<% end %>
 </table>
+
