@@ -11,6 +11,13 @@ class ListController < ApplicationController
     redirect_to @list
 	end
 
+	def upload
+		render nothing: true
+
+	  uploaded_io = params[:list][:csv_file]
+	  logger.info uploaded_io.read 
+	end
+
 	def show
 		@id = params[:id]
 		@entries = List.find(params[:id]).entries

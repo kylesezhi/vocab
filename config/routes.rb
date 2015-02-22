@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
 
   get 'list/:id/export' => 'list#export'
+  post 'list/upload' => 'list#upload'
 
   root 'list#index'
 
