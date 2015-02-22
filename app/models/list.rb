@@ -1,12 +1,14 @@
 class List < ActiveRecord::Base
   has_many :entries
 
-  def self.save(upload)
-    name =  upload['list'].original_filename
-    directory = "public/data"
-    # create the file path
-    path = File.join(directory, name)
-    # write the file
-    File.open(path, "wb") { |f| f.write(upload['datafile'].read) }
+  require 'csv'
+
+  def self.convert(name, filepath)
+    list1 = List.create(name: name)
+    CSV.foreach(filepath, :headers => true) do |row|
+      japanese = row['japanese'].nil? ? "" : row['japanese']
+      english = row['english'].nil? ? "" : row['english']
+      Entry.create(japanese: japanese, english: english, list: list1)
+    end
   end
 end

@@ -15,7 +15,7 @@ class ListController < ApplicationController
 		render nothing: true
 
 	  uploaded_io = params[:list][:csv_file]
-	  logger.info uploaded_io.read 
+	  List.convert(uploaded_io.original_filename, uploaded_io.tempfile)
 	end
 
 	def show
