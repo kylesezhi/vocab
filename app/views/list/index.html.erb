@@ -6,6 +6,8 @@
 	<% for list in @lists %>
 		<li>
 			<%= link_to list.name, "/list/#{list.id}" %>
-		</li> 
+		</li>
 	<% end %>
 </ul>
+
+<%= link_to 'Add new list', new_list_path %>

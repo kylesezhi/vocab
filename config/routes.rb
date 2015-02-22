@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
-  # get 'welcome/index'
-
-  get 'hello/:world' => 'welcome#index'
-
-  get 'list/:id' => 'list#list'
+  resources :list do
+    resources :entries
+  end
 
   get 'list/:id/export' => 'list#export'
 
-  root 'list#lists'
+  root 'list#index'
 
   get 'search' => 'list#search'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

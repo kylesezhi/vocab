@@ -1,7 +1,8 @@
 # To Do
 - [x] Get Japanese search to work
 - [x] Highlight the search results
-- [ ] Add an entry
+- [ ] Fix highlighting
+- [x] Add an entry
 - [ ] Make pretty
 - [ ] Enable csv file upload
 

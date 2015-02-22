@@ -2,11 +2,14 @@
 		<input type="text" id="term" name="term" class="keyword"  tabindex="1" />
 		<button type="submit">search</button>
 </form>
+
+<%= link_to 'Add new entry', new_list_entry_path(@id) %>
+
 <table>
 	<% for entry in @entries %>
 		<tr>
-				<td><%= highlight(entry.japanese, @highlight_term) %></td>
-				<td><%= highlight(entry.english, @highlight_term) %></td>
+				<td><%= entry.japanese %></td>
+				<td><%= entry.english %></td>
 		</tr>
 	<% end %>
 </table>

@@ -1,9 +1,22 @@
 class ListController < ApplicationController
-	def lists
+	def index
 		@lists = List.all
 	end
 
-	def list
+	def new
+		# @list = List.new
+	end
+
+	def create
+		# render plain: params[:list].inspect
+		@list= List.new(list_params)
+
+    @list.save
+    redirect_to @list
+	end
+
+	def show
+		@id = params[:id]
 		@entries = List.find(params[:id]).entries
 	end
 
@@ -11,7 +24,7 @@ class ListController < ApplicationController
 		@entries = Entry.search(params[:term])
 		@highlight_term = params[:term]
 
-		render 'list'
+		render 'show'
 	end
 
 	def export
@@ -24,3 +37,8 @@ class ListController < ApplicationController
 		send_data deck.generate_deck, :filename => "#{list.name}_deck.txt"
 	end
 end
+
+private
+  def list_params
+    params.require(:list).permit(:name)
+  end
