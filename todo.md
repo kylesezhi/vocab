@@ -7,6 +7,7 @@
 - [x] Enable csv file upload
 - [ ] Add validation for csv
 - [ ] Autocomplete
+- [ ] Heroku
  
 # Kyle
 - [x] Update CSV file
